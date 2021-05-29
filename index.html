@@ -1,102 +1,137 @@
 <!DOCTYPE html>
 
 <html lang="et">
-  <head>
-    <meta charset="utf-8"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
-    <link href="assets/css/styles.css" rel="stylesheet">
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Yatra+One&display=swap" rel="stylesheet">
-    <title>Fotonäitus "Noorus"</title>
-  </head>
 
-  <body>
-    <nav class="flex flex-col lg:flex-row bg-green-200 font-sans font-semibold text-xl lg:text-2xl lg:px-3">
-      <a href="index.html" class="text-indigo-800 px-8 py-2 text-center">Noorus</a>
-      <a href="meist.html" class="text-indigo-800 hover:shadow-xl hover:bg-green-100 cursor-pointer border rounded border-green-200 transition duration-100 ease-in-out px-8 py-2 text-center">Meist</a>
-      <a href="https://docs.google.com/forms/d/e/1FAIpQLSenq0U__iH4uk5cmeq7MRCxDdzpOFiRfX_UQFYbemS1I8Zidg/viewform?usp=sf_link" target="_blank" rel="noopener noreferrer" class="text-indigo-800 hover:shadow-xl hover:bg-green-100 cursor-pointer border rounded border-green-200 transition duration-100 ease-in-out px-8 py-2 text-center">Küsimustik</a>
-    </nav>
-    <div class="bg-gray-100 gap-2 p-5 lg:grid lg:grid-cols-12">
-      <p class="col-span-4 p-4 bg-white shadow text-lg">Tere meie oleme Tallinna Nõmme Gümnaasiumi õpilased Rasmus Telve ja Kristjan Henri Roots ning see on meie koostööprojektina valminud fotonäitus "Noorus" veebilehe näol. Veebilehega näitame oma hobisid ning oskusi fotograafia- ja programmeerimisalal. Näituse nimeks sai valitud Noorus, sest see, mis me teieni selle näitusega toome, võtabki kokku tükid meie noorusest. Kui olete näituse läbi vaadanud siis palun täitke ka küsimustik, mille link asub veebilehe üleval või all.  Küsimustikule vastamine võtab maksimaalselt 5 minutit. Aitäh!<br>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
+  <link href="/assets/css/styles.css" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Yatra+One&display=swap" rel="stylesheet">
+  <title>Fotonäitus "Noorus"</title>
+</head>
+
+<body>
+  <nav class="flex flex-col lg:flex-row bg-green-200 font-sans font-semibold text-xl lg:text-2xl lg:px-3">
+    <a href="index.html" class="text-indigo-800 px-8 py-2 text-center">Noorus</a>
+    <a href="meist.html"
+      class="text-indigo-800 hover:shadow-xl hover:bg-green-100 cursor-pointer border rounded border-green-200 transition duration-100 ease-in-out px-8 py-2 text-center">Meist</a>
+    <a href="https://docs.google.com/forms/d/e/1FAIpQLSenq0U__iH4uk5cmeq7MRCxDdzpOFiRfX_UQFYbemS1I8Zidg/viewform?usp=sf_link"
+      target="_blank" rel="noopener noreferrer"
+      class="text-indigo-800 hover:shadow-xl hover:bg-green-100 cursor-pointer border rounded border-green-200 transition duration-100 ease-in-out px-8 py-2 text-center">Küsimustik</a>
+  </nav>
+  <div class="bg-gray-100 gap-2 p-5 lg:grid lg:grid-cols-12">
+    <p class="col-span-4 p-4 bg-white shadow text-lg">Tere meie oleme Tallinna Nõmme Gümnaasiumi õpilased Rasmus Telve
+      ja Kristjan Henri Roots ning see on meie koostööprojektina valminud fotonäitus "Noorus" veebilehe näol.
+      Veebilehega näitame oma hobisid ning oskusi fotograafia- ja programmeerimisalal. Näituse nimeks sai valitud
+      Noorus, sest see, mis me teieni selle näitusega toome, võtabki kokku tükid meie noorusest. Kui olete näituse läbi
+      vaadanud siis palun täitke ka küsimustik, mille link asub veebilehe üleval või all. Küsimustikule vastamine võtab
+      maksimaalselt 5 minutit. Aitäh!<br>
       P.S.- Pildid lahti klikates näete neid suurema ning värvilisena</p>
-      <p class="text-center filler col-span-8 p-4 pt-11 shadow text-7xl lg:text-9xl bg-indigo-800 text-green-200">Noorus</p>
+    <p class="text-center filler col-span-8 p-4 pt-11 shadow text-7xl lg:text-9xl bg-indigo-800 text-green-200">Noorus
+    </p>
+  </div>
+  <main>
+    <div id="modal" class="modal">
+      <span id="modal-close" class="close">&times;</span>
+      <img id="modal-img" class="modal-content">
+      <div id="modal-caption" class="caption"></div>
     </div>
-      <main>
-        <div id="modal" class="modal">
-          <span id="modal-close" class="close">&times;</span>
-          <img id="modal-img" class="modal-content">
-          <div id="modal-caption" class="caption"></div>
-        </div>
-        <div class="bg-gray-100 grid grid-cols-1 lg:grid-cols-8 xl:grid-cols-12 gap-2 p-5">
-          <div class="bg-white col-span-4 row-span-3 p-4 pb-6 border rounded-sm border-gray-300 shadow group-hover:border-transparent hover:shadow-2xl active:bg-gray-500">
-            <img class="photo cursor-pointer horizontal" src="assets/images/pilt.veebileht.h1.crop.jpg" alt="Vana Edelaraudtee rong Tallinn-Väikses"/>
-            <p class="font-monospaced font-medium text-xl pt-4 text-center">Vana Edelaraudtee rong Tallinn-Väikses</p>
-          </div>
-          <div class="bg-white col-span-4 row-span-3 p-4 pb-6 border rounded-sm border-gray-300 shadow group-hover:border-transparent hover:shadow-2xl active:bg-gray-500">
-            <img class="photo cursor-pointer horizontal" src="assets/images/pilt.veebileht.h2.crop.jpg" alt="Naksitrallid kail"/>
-            <p class="font-monospaced font-medium text-xl pt-4 text-center">Naksitrallid kail</p>
-          </div>  
-          <div class="bg-white col-span-4 row-span-3 p-4 pb-6 border rounded-sm border-gray-300 shadow group-hover:border-transparent hover:shadow-2xl active:bg-gray-500">
-            <img class="photo cursor-pointer horizontal" src="assets/images/pilt.veebileht.h3.crop.jpg" alt="Eesti jäätis Lätis"/>
-            <p class="font-monospaced font-medium text-xl pt-4 text-center">Eesti jäätis Lätis</p>
-          </div>
-          <div class="bg-white col-span-4 row-span-3 p-4 pb-6 border rounded-sm border-gray-300 shadow group-hover:border-transparent hover:shadow-2xl active:bg-gray-500">
-            <img class="photo cursor-pointer vertical" src="assets/images/pilt.veebileht.v2.crop.jpg" alt="Kuusalu Bernhardiin"/>
-            <p class="font-monospaced font-medium text-xl pt-4 text-center">Kuusalu Bernhardiin</p>
-          </div>
-          <div class="bg-white col-span-4 row-span-3 p-4 pb-6 border rounded-sm border-gray-300 shadow group-hover:border-transparent hover:shadow-2xl active:bg-gray-500">
-            <img class="photo cursor-pointer vertical" src="assets/images/pilt.veebileht.v3.crop.jpg" alt="Ootamas laskumist"/>
-            <p class="font-monospaced font-medium text-xl pt-4 text-center">Ootamas laskumist</p>
-          </div>
-          <div class="bg-white col-span-4 row-span-3 p-4 pb-6 border rounded-sm border-gray-300 shadow group-hover:border-transparent hover:shadow-2xl active:bg-gray-500">
-            <img class="photo cursor-pointer horizontal" src="assets/images/pilt.veebileht.h4.crop.png" alt="SS2k19"/>
-            <p class="font-monospaced font-medium text-xl pt-4 text-center">SS2k19</p>
-          </div>
-          <div class="bg-white col-span-4 row-span-3 p-4 pb-6 border rounded-sm border-gray-300 shadow group-hover:border-transparent hover:shadow-2xl active:bg-gray-500">
-            <img class="photo cursor-pointer horizontal" src="assets/images/pilt.veebileht.h5.crop.jpg" alt="Vamos!"/>
-            <p class="font-monospaced font-medium text-xl pt-4 text-center">Vamos!</p>
-          </div>
-          <div class="bg-white col-span-4 row-span-3 p-4 pb-6 border rounded-sm border-gray-300 shadow group-hover:border-transparent hover:shadow-2xl active:bg-gray-500">
-            <img class="photo cursor-pointer horizontal" src="assets/images/pilt.veebileht.h6.crop.jpg" alt="Inimtühi Laagri"/>
-            <p class="font-monospaced font-medium text-xl pt-4 text-center">Inimtühi Laagri</p>
-          </div>
-          <div class="bg-white col-span-4 row-span-3 p-4 pb-6 border rounded-sm border-gray-300 shadow group-hover:border-transparent hover:shadow-2xl active:bg-gray-500">
-            <img class="photo cursor-pointer vertical" src="assets/images/pilt.veebileht.v4.crop.jpg" alt="Välguga Kaw"/>
-            <p class="font-monospaced font-medium text-xl pt-4 text-center">Välguga Kaw</p>
-          </div>
-          <div class="bg-white col-span-4 row-span-3 p-4 pb-6 border rounded-sm border-gray-300 shadow group-hover:border-transparent hover:shadow-2xl active:bg-gray-500">
-            <img class="photo cursor-pointer vertical" src="assets/images/pilt.veebileht.v5.crop.jpg" alt="Kaur Hara allveelaevabaasis"/>
-            <p class="font-monospaced font-medium text-xl pt-4 text-center">Kaur Hara allveelaevabaasis</p>
-          </div>
-          <div class="bg-white col-span-4 row-span-3 p-4 pb-6 border rounded-sm border-gray-300 shadow group-hover:border-transparent hover:shadow-2xl active:bg-gray-500">
-            <img class="photo cursor-pointer vertical" src="assets/images/pilt.veebileht.v6.crop.jpg" alt="Üksik vari"/>
-            <p class="font-monospaced font-medium text-xl pt-4 text-center">Üksik vari</p>
-          </div>
-          <div class="bg-white col-span-4 row-span-3 p-4 pb-6 border rounded-sm border-gray-300 shadow group-hover:border-transparent hover:shadow-2xl active:bg-gray-500">
-            <img class="photo cursor-pointer vertical" src="assets/images/pilt.veebileht.h7.jpg" alt="Päikeseloojangu bemm"/>
-            <p class="font-monospaced font-medium text-xl pt-4 text-center">Päikeseloojangu bemm</p>
-          </div>
-          <div class="bg-white col-span-4 row-span-3 p-4 pb-6 border rounded-sm border-gray-300 shadow group-hover:border-transparent hover:shadow-2xl active:bg-gray-500">
-            <img class="photo cursor-pointer vertical" src="assets/images/pilt.veebileht.h8.jpg" alt="Volts udus"/>
-            <p class="font-monospaced font-medium text-xl pt-4 text-center">Volts udus</p>
-          </div>
-          <div class="bg-white col-span-4 row-span-3 p-4 pb-6 border rounded-sm border-gray-300 shadow group-hover:border-transparent hover:shadow-2xl active:bg-gray-500">
-            <img class="photo cursor-pointer vertical" src="assets/images/pilt.veebileht.h9.jpg" alt="Metsas suusatamas"/>
-            <p class="font-monospaced font-medium text-xl pt-4 text-center">Metsas suusatamas</p>
-          </div>
-          <div class="bg-white col-span-4 row-span-3 p-4 pb-6 border rounded-sm border-gray-300 shadow group-hover:border-transparent hover:shadow-2xl active:bg-gray-500">
-            <img class="photo cursor-pointer vertical" src="assets/images/pilt.veebileht.h10.jpg" alt="2106 rannas"/>
-            <p class="font-monospaced font-medium text-xl pt-4 text-center">2106 rannas</p>
-          </div>
-        </div>
-      </main>
-      <div class="px-10 py-3 bg-white">
-        <a href="https://docs.google.com/forms/d/e/1FAIpQLSenq0U__iH4uk5cmeq7MRCxDdzpOFiRfX_UQFYbemS1I8Zidg/viewform?usp=sf_link" target="_blank" rel="noopener noreferrer">
-        <img src="assets/images/google.forms.png" alt="https://docs.google.com/forms/d/e/1FAIpQLSenq0U__iH4uk5cmeq7MRCxDdzpOFiRfX_UQFYbemS1I8Zidg/viewform?usp=sf_link"/>
-        </a>
+    <div class="bg-gray-100 grid grid-cols-1 lg:grid-cols-8 xl:grid-cols-12 gap-2 p-5">
+      <div
+        class="bg-white col-span-4 row-span-3 p-4 pb-6 border rounded-sm border-gray-300 shadow group-hover:border-transparent hover:shadow-2xl active:bg-gray-500">
+        <img class="photo cursor-pointer horizontal" src="/assets/images/pilt.veebileht.h1.crop.jpg"
+          alt="Vana Edelaraudtee rong Tallinn-Väikses" />
+        <p class="font-monospaced font-medium text-xl pt-4 text-center">Vana Edelaraudtee rong Tallinn-Väikses</p>
       </div>
-      <script src="assets/javascript/javascript.js"></script>
-  </body>
+      <div
+        class="bg-white col-span-4 row-span-3 p-4 pb-6 border rounded-sm border-gray-300 shadow group-hover:border-transparent hover:shadow-2xl active:bg-gray-500">
+        <img class="photo cursor-pointer horizontal" src="/assets/images/pilt.veebileht.h2.crop.jpg"
+          alt="Naksitrallid kail" />
+        <p class="font-monospaced font-medium text-xl pt-4 text-center">Naksitrallid kail</p>
+      </div>
+      <div
+        class="bg-white col-span-4 row-span-3 p-4 pb-6 border rounded-sm border-gray-300 shadow group-hover:border-transparent hover:shadow-2xl active:bg-gray-500">
+        <img class="photo cursor-pointer horizontal" src="/assets/images/pilt.veebileht.h3.crop.jpg"
+          alt="Eesti jäätis Lätis" />
+        <p class="font-monospaced font-medium text-xl pt-4 text-center">Eesti jäätis Lätis</p>
+      </div>
+      <div
+        class="bg-white col-span-4 row-span-3 p-4 pb-6 border rounded-sm border-gray-300 shadow group-hover:border-transparent hover:shadow-2xl active:bg-gray-500">
+        <img class="photo cursor-pointer vertical" src="/assets/images/pilt.veebileht.v2.crop.jpg"
+          alt="Kuusalu Bernhardiin" />
+        <p class="font-monospaced font-medium text-xl pt-4 text-center">Kuusalu Bernhardiin</p>
+      </div>
+      <div
+        class="bg-white col-span-4 row-span-3 p-4 pb-6 border rounded-sm border-gray-300 shadow group-hover:border-transparent hover:shadow-2xl active:bg-gray-500">
+        <img class="photo cursor-pointer vertical" src="/assets/images/pilt.veebileht.v3.crop.jpg"
+          alt="Ootamas laskumist" />
+        <p class="font-monospaced font-medium text-xl pt-4 text-center">Ootamas laskumist</p>
+      </div>
+      <div
+        class="bg-white col-span-4 row-span-3 p-4 pb-6 border rounded-sm border-gray-300 shadow group-hover:border-transparent hover:shadow-2xl active:bg-gray-500">
+        <img class="photo cursor-pointer horizontal" src="/assets/images/pilt.veebileht.h4.crop.png" alt="SS2k19" />
+        <p class="font-monospaced font-medium text-xl pt-4 text-center">SS2k19</p>
+      </div>
+      <div
+        class="bg-white col-span-4 row-span-3 p-4 pb-6 border rounded-sm border-gray-300 shadow group-hover:border-transparent hover:shadow-2xl active:bg-gray-500">
+        <img class="photo cursor-pointer horizontal" src="/assets/images/pilt.veebileht.h5.crop.jpg" alt="Vamos!" />
+        <p class="font-monospaced font-medium text-xl pt-4 text-center">Vamos!</p>
+      </div>
+      <div
+        class="bg-white col-span-4 row-span-3 p-4 pb-6 border rounded-sm border-gray-300 shadow group-hover:border-transparent hover:shadow-2xl active:bg-gray-500">
+        <img class="photo cursor-pointer horizontal" src="/assets/images/pilt.veebileht.h6.crop.jpg"
+          alt="Inimtühi Laagri" />
+        <p class="font-monospaced font-medium text-xl pt-4 text-center">Inimtühi Laagri</p>
+      </div>
+      <div
+        class="bg-white col-span-4 row-span-3 p-4 pb-6 border rounded-sm border-gray-300 shadow group-hover:border-transparent hover:shadow-2xl active:bg-gray-500">
+        <img class="photo cursor-pointer vertical" src="/assets/images/pilt.veebileht.v4.crop.jpg" alt="Välguga Kaw" />
+        <p class="font-monospaced font-medium text-xl pt-4 text-center">Välguga Kaw</p>
+      </div>
+      <div
+        class="bg-white col-span-4 row-span-3 p-4 pb-6 border rounded-sm border-gray-300 shadow group-hover:border-transparent hover:shadow-2xl active:bg-gray-500">
+        <img class="photo cursor-pointer vertical" src="/assets/images/pilt.veebileht.v5.crop.jpg"
+          alt="Kaur Hara allveelaevabaasis" />
+        <p class="font-monospaced font-medium text-xl pt-4 text-center">Kaur Hara allveelaevabaasis</p>
+      </div>
+      <div
+        class="bg-white col-span-4 row-span-3 p-4 pb-6 border rounded-sm border-gray-300 shadow group-hover:border-transparent hover:shadow-2xl active:bg-gray-500">
+        <img class="photo cursor-pointer vertical" src="/assets/images/pilt.veebileht.v6.crop.jpg" alt="Üksik vari" />
+        <p class="font-monospaced font-medium text-xl pt-4 text-center">Üksik vari</p>
+      </div>
+      <div
+        class="bg-white col-span-4 row-span-3 p-4 pb-6 border rounded-sm border-gray-300 shadow group-hover:border-transparent hover:shadow-2xl active:bg-gray-500">
+        <img class="photo cursor-pointer vertical" src="/assets/images/pilt.veebileht.h7.jpg"
+          alt="Päikeseloojangu bemm" />
+        <p class="font-monospaced font-medium text-xl pt-4 text-center">Päikeseloojangu bemm</p>
+      </div>
+      <div
+        class="bg-white col-span-4 row-span-3 p-4 pb-6 border rounded-sm border-gray-300 shadow group-hover:border-transparent hover:shadow-2xl active:bg-gray-500">
+        <img class="photo cursor-pointer vertical" src="/assets/images/pilt.veebileht.h8.jpg" alt="Volts udus" />
+        <p class="font-monospaced font-medium text-xl pt-4 text-center">Volts udus</p>
+      </div>
+      <div
+        class="bg-white col-span-4 row-span-3 p-4 pb-6 border rounded-sm border-gray-300 shadow group-hover:border-transparent hover:shadow-2xl active:bg-gray-500">
+        <img class="photo cursor-pointer vertical" src="/assets/images/pilt.veebileht.h9.jpg" alt="Metsas suusatamas" />
+        <p class="font-monospaced font-medium text-xl pt-4 text-center">Metsas suusatamas</p>
+      </div>
+      <div
+        class="bg-white col-span-4 row-span-3 p-4 pb-6 border rounded-sm border-gray-300 shadow group-hover:border-transparent hover:shadow-2xl active:bg-gray-500">
+        <img class="photo cursor-pointer vertical" src="/assets/images/pilt.veebileht.h10.jpg" alt="2106 rannas" />
+        <p class="font-monospaced font-medium text-xl pt-4 text-center">2106 rannas</p>
+      </div>
+    </div>
+  </main>
+  <div class="px-10 py-3 bg-white">
+    <a href="https://docs.google.com/forms/d/e/1FAIpQLSenq0U__iH4uk5cmeq7MRCxDdzpOFiRfX_UQFYbemS1I8Zidg/viewform?usp=sf_link"
+      target="_blank" rel="noopener noreferrer">
+      <img src="/assets/images/google.forms.png"
+        alt="https://docs.google.com/forms/d/e/1FAIpQLSenq0U__iH4uk5cmeq7MRCxDdzpOFiRfX_UQFYbemS1I8Zidg/viewform?usp=sf_link" />
+    </a>
+  </div>
+  <script src="/assets/javascript/javascript.js"></script>
+</body>
 
 </html>
